@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Global Air Quality</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page">
+        <h1>Air pollution across the world</h1>
+        <p class="subtitle">
+            This map visualizes live air quality data aggregated by country.
+        </p>
+
+        <div class="controls">
+            <label for="pollutantSelect">Select Pollutant:</label>
+            <select id="pollutantSelect">
+                <option value="1">PM 2.5</option>
+                <option value="2">PM 10</option>
+                <option value="3">Ozone (O3)</option>
+                <option value="4">Nitrogen Dioxide (NO2)</option>
+                <option value="5">Sulfur Dioxide (SO2)</option>
+                <option value="6">Carbon Monoxide (CO)</option>
+            </select>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close">&times;</button>
+            <h2>About this map</h2>
+
+            <p>
+                This interactive web map visualizes up to date air pollution levels on a global level.
+                The dropdown contains all relevant pollutants.
+            </p>
+
+            <p><strong>Data source:</strong> OpenAQ API</p>
+            <p><strong>Created by:</strong> Florian Nadegger</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="secrets.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

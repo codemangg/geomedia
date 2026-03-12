@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  margin-top: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 1rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  width: 96%;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.controls select {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  background: white;
+}
+
+#map {
+  height: 700px;
+  width: 96%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+}
+
+.leaflet-control.info-button {
+  background: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+}
+
+.legend {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #111827;
+}
+
+.legend strong {
+  margin: 0 0 8px 0;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.legend i {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 8px;
+  border-radius: 3px;
+  opacity: 0.8;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.mini-tooltip {
+  text-align: center;
+}
+
+.mini-tooltip span {
+  font-size: 10px;
+  color: #666;
+}
+
+.station-popup {
+  font-family: sans-serif;
+  padding: 5px;
+  min-width: 220px;
+}
+
+.station-popup.loading,
+.station-popup.message {
+  text-align: center;
+  padding: 10px;
+}
+
+.station-popup.error {
+  color: red;
+}
+
+.popup-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.popup-subtitle {
+  font-size: 12px;
+  color: #666;
+}
+
+.popup-provider {
+  font-size: 11px;
+  color: #888;
+}
+
+.popup-divider {
+  margin: 6px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.popup-measurement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-measurement b {
+  font-size: 14px;
+}
+
+.popup-updated {
+  font-size: 10px;
+  color: #999;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+  font-size: 0.95rem;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.modal-content {
+  position: relative;
+  background: #ffffff;
+  padding: 1.5rem 1.75rem 1.5rem;
+  border-radius: 16px;
+  width: min(480px, 92vw);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.35);
+  z-index: 1;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.modal-content h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.modal-content p {
+  margin: 0.35rem 0;
+}
+
+.modal-content ul {
+  margin: 0.5rem 0 0.75rem 1.1rem;
+  padding: 0;
+}
+
+.modal-content li {
+  margin-bottom: 0.25rem;
+}
+
+.modal-content p:last-of-type,
+.modal-content p:nth-last-of-type(2) {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.15s ease;
+}
+
+.modal-close:hover {
+  color: #111827;
+}
