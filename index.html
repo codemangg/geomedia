@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Global Air Quality Stations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page">
+        <h1>Global Air Pollution Monitoring</h1>
+        <p class="subtitle">Annual mean concentrations from global monitoring stations (2010 to 2021). Zoom restricted to valid data areas.</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="pollutantSelect">Pollutant:</label>
+                <select id="pollutantSelect">
+                    <option value="1">PM 2.5</option>
+                    <option value="2">PM 10</option>
+                    <option value="3">Nitrogen Dioxide (NO2)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="yearSlider">Year: <span id="yearDisplay">2021</span></label>
+                <input type="range" id="yearSlider" min="2010" max="2021" value="2021" step="1">
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button id="modalClose" class="modal-close">&times;</button>
+            <h2>Station Monitoring Data</h2>
+            <p>This map visualizes air pollution levels from the WHO Ambient Air Quality Database (2024 Update).</p>
+            <p><strong>Navigation:</strong> Use the "Home" button to reset the view. Zooming out is limited to keep the world visible.</p>
+            <p><strong>Data source:</strong> WHO Air Quality Database (v6.1)</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
